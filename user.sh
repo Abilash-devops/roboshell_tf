@@ -76,6 +76,6 @@ yum install mongodb-org-shell -y &>> $LOGFILE
 
 validate $? "mongo client"
 
-mongo --host mongodb.abilashhareendran.in </app/schema/user.js &>> $LOGFILE
+mongo --host mongodb.padmasrikanth.tech </app/schema/user.js &>> $LOGFILE
 
 validate $? "push data to DB"
