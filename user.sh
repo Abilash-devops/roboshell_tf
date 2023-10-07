@@ -1,7 +1,7 @@
 #!/bin/bash
 D=$(date +%F:%H:%M:%S)
 SCRIPT_NAME=$0
-LOG_PATH=/home/centos/roboshell/logs
+LOG_PATH=/home/centos/roboshell_tf/logs
 LOGFILE=$LOG_PATH/$0-$D-log
 u=$(id -u)
 R="\e[31m"
@@ -52,7 +52,7 @@ npm install  &>> $LOGFILE
 
 validate $? "depencencies package"
 
-cp -rp /home/centos/roboshell/user.service /etc/systemd/system/user.service &>> $LOGFILE
+cp -rp /home/centos/roboshell_tf/user.service /etc/systemd/system/user.service &>> $LOGFILE
 
 validate $? "user service file"
 
@@ -68,7 +68,7 @@ systemctl start user &>> $LOGFILE
 
 validate $? "start service"
 
-cp -rp /home/centos/roboshell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $
+cp -rp /home/centos/roboshell_tf/mongo.repo /etc/yum.repos.d/mongo.repo &>> $
 
 validate $? "mongo repo"
 
