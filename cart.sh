@@ -1,7 +1,7 @@
 #!/bin/bash
 D=$(date +%F:%H:%M:%S)
 SCRIPT_NAME=$0
-LOG_PATH=/home/centos/roboshell/logs
+LOG_PATH=/home/centos/roboshell_tf/logs
 LOGFILE=$LOG_PATH/$0-$D-log
 u=$(id -u)
 R="\e[31m"
@@ -52,7 +52,7 @@ npm install  &>> $LOGFILE
 
 validate $? "depencencies package"
 
-cp -rp /home/centos/roboshell/cart.service /etc/systemd/system/cart.service &>> $LOGFILE
+cp -rp /home/centos/roboshell_tf/cart.service /etc/systemd/system/cart.service &>> $LOGFILE
 
 validate $? "user service file"
 
